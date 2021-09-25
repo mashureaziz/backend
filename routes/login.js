@@ -11,12 +11,8 @@ const login = {
  }
 
 
-router.post('/login', (req,res) =>{
-    if(req.currentUser) {
-        const user = req.currentUser;
-        return res.send(`Already logged in ${user}`);
-    }
-
+router.post('/api/login', (req,res) =>{
+    
    const { user, password } = req.body;
 
    if(user === login.user && password === login.password) {

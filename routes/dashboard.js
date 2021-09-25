@@ -7,7 +7,7 @@ dotenv.config();
 
 const router = express.Router();
 
-router.get('/dashboard', checkAuth, (req,res) =>{
+router.get('/api/dashboard', checkAuth, (req,res) =>{
     res.send(`Welcome to dashboard ${req.currentUser}`);
 });
 

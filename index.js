@@ -21,13 +21,9 @@ app.set('trust proxy',true);
 
 app.use(cookieSession({
     keys: new Array(10).fill(0).map(el => randomBytes(12).toString('hex')),
-    maxAge: 600 * 1000
 }))
 
-app.use(cors({
-    origin : true,
-    credentials : true,
-}));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
