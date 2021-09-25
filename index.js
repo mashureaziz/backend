@@ -15,7 +15,9 @@ const { dashRouter } = require('./routes/dashboard');
 const app = express();
 app.use(fileUpload({
     createParentPath: true
-}))
+}));
+
+app.set('trust proxy',true);
 
 app.use(cookieSession({
     keys: new Array(10).fill(0).map(el => randomBytes(12).toString('hex')),
